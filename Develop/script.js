@@ -10,17 +10,17 @@ var confirmSpecial
 var lowerCase = ["a", "b", 'c', 'd', 'e', 'f', 'g','h' ,'i' ,'j', 'k' ,'l' ,'m' ,'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var blankUpper = [];
 var blankUpper = [];
+// getting the uppercase without having to type it all out again
 var toUpper = function (x) {
   return x.toUpperCase();
 };
 upperCase = lowerCase.map(toUpper);
-// var upperCase = ["A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
+// creating the function to ask the user questions 
 function generatePassword() {
  
     passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
     console.log("Password length " + Length);
-    
+    // looks at the input and lets the user know if its not in the requirements
     if(!passwordLength) {
       alert("Required value");
   
@@ -29,6 +29,7 @@ function generatePassword() {
       console.log("Password length " + Length);
     
     } else { 
+        // asking about the other variables and if you want them
       confirmLowercase = confirm("Will this contain lower case letters?");
       console.log("Lower case " + confirmLowercase);
       confirmUppercase = confirm("Will this contain upper case letters?");
@@ -40,7 +41,7 @@ function generatePassword() {
   
     };
   
-   
+   // checking conditions are met to generate the correct password
     if (!confirmLowercase && !confirmUppercase && !confirmNumber && !confirmSpecial) {
       userChoices = alert("You must choose a criteria");
    
